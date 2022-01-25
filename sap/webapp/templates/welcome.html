@@ -1,0 +1,64 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Bienvenido</title>
+    <link  href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Sistema de Administracion de personas (SAP)</h1>
+<div>Numero de personas: {{no_users}}</div>
+<br>
+<div>
+    <a href="new_user">Agregar Persona</a>
+</div>
+<br>
+<br>
+<div>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Compañia</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Fecha Nacimiento</th>
+            <th>Tel. Trabajo</th>
+            <th>Tel. Personal</th>
+            <th>Direccion</th>
+            <th>Ciudad</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td> {{user.name}} {{user.lastname}}</td>
+            <td>{{user.company}}</td>
+            <td>{{user.proImage}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.birthdate}}</td>
+            <td>{{user.wPhone}}</td>
+            <td>{{user.pPhone}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.city}}</td>
+            <td><a href="detail_user/{{user.id}}">Ver</a></td>
+            <td><a href="edit_user/{{user.id}}">Editar</a></td>
+            <td><a href="delete_user/{{user.id}}">Eliminar</a></td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{% url 'list' %}">Filtrar Resultados</a>
+
+</div>
+</body>
+</html>

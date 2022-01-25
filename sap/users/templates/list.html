@@ -1,0 +1,76 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Bienvenido</title>
+
+    <link  href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Sistema de Administracion de personas (SAP)</h1>
+<br>
+<div>
+    <a href="{% url 'index' %}">Regresar al Inicio</a>
+</div>
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form method="post">
+                {{myfilter.form}}
+                {% csrf_token %}
+            <button class="btn btn-primary" type="submit">
+                Search
+            </button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+<div>
+
+    <table border="1" id="listTable">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Compañia</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Fecha Nacimiento</th>
+            <th>Tel. Trabajo</th>
+            <th>Tel. Personal</th>
+            <th>Direccion</th>
+            <th>Ciudad</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td> {{user.name}} {{user.lastname}}</td>
+            <td>{{user.company}}</td>
+            <td>{{user.proImage}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.birthdate}}</td>
+            <td>{{user.wPhone}}</td>
+            <td>{{user.pPhone}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.city}}</td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+
+
+</html>
+
+

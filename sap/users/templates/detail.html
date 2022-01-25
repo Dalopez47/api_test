@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle Usuario</title>
+</head>
+<body>
+  <h1>Detalle Usuario</h1>
+  <div>Id Persona: {{user.id}}</div>
+  <div>Nombre: {{user.name}}</div>
+  <div>Apellido: {{user.lastname}}</div>
+  <div>Compañia: {{user.company}}</div>
+  <div>Imagen de Perfil: {{user.proImage}}</div>
+  <div>Email : {{user.email}}</div>
+  <div>Nacimiento: {{persuserona.birthdate}}</div>
+  <div>Telefono: {{user.wPhone}}</div>
+  <div>Telefono: {{user.pPhone}}</div>
+  <div>Direccion: {{user.address}}</div>
+  <div>Ciudad: {{user.city}}</div>
+  <br>
+
+
+<a href="{% url 'index' %}">Regresar al Inicio</a>
+
+
+</body>
+</html>

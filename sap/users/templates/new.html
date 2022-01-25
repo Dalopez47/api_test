@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Usuario</title>
+    <link  href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+    <h1>Agregar Usuario</h1>
+    <form method="POST">
+        <table>
+            {{formUser}}
+        </table>
+        <button type="submit" >Enviar</button>
+        {% csrf_token %}
+    </form>
+<a href="{% url 'index' %}">Regresar al Inicio</a>
+</body>
+</html>
