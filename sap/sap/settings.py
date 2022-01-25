@@ -28,7 +28,10 @@ SECRET_KEY = 'django-insecure-w7m3vv(9wq3k0^z6^tq0y4fl-l3+lt=^68sguhl=1i78%@t5h8
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
+#configuracion de cors
+JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -141,3 +144,7 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Configurar django para heroku
+import django_heroku
+django_heroku.settings(locals())
