@@ -2,7 +2,7 @@
 
 La app esta creada en lenguaje Python con el framework django.
 
-la parte front esta conformada por las siguientes platillas
+la parte front esta conformada por las siguientes plantillas
 
 - Welcome.html
 es la plantilla principal del proyecto, en ella se ve una tabla con los datos requeridos. tiene los enlaces que completan las operaciones CRUD, el link 
@@ -26,7 +26,7 @@ El gestor de base de datos usado fue postgreSQL
 
 todas las plantillas tienen link para regresar al inicio
 
-todas la vistas estn basadas en clases, sguiendo el paltron de diseño MVT
+todas la vistas estan basadas en clases, sguiendo el patron de diseño MVT
 
 
 
